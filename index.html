@@ -17,8 +17,8 @@
     <!-- remixicon cdn -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.min.css" rel="stylesheet">
 
-    <!-- css link -->
-    <link rel="stylesheet" href="css/login.css">
+    <!-- CSS link -->
+    <link rel="stylesheet" href="CSS/login.css">
     
 </head>
 <body>
@@ -116,7 +116,7 @@
         image: profileLink.dataset.profileImage
       };
 
-      localStorage.setItem("selectedProfile", jsON.stringify(selectedProfile));
+      localStorage.setItem("selectedProfile", JSON.stringify(selectedProfile));
 
       window.location.href = profileLink.href;
     });
