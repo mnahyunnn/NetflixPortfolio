@@ -1895,59 +1895,7 @@ body.modal-open .feature-close {
   }
 
   /* contact */
-  .contact-inner {
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-  }
-
-  .contact-subtitle {
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 14px 0 20px;
-  }
-
-  .contact-box,
-  .contact-form {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .contact-form-row {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    margin-bottom: 14px;
-  }
-
-  .contact-form-row label {
-    font-size: 14px;
-  }
-
-  .contact-form-row input,
-  .contact-form-row textarea {
-    width: 100%;
-    font-size: 14px;
-  }
-
-  .contact-form-row input {
-    height: 46px;
-    padding: 0 12px;
-  }
-
-  .contact-form-row textarea {
-    min-height: 140px;
-    padding: 12px;
-  }
-
-  .contact-submit {
-    width: 100%;
-    height: 48px;
-    margin-left: 0;
-    font-size: 16px;
-  }
-
+  
   .contact-right {
     min-height: auto;
     padding-top: 0;
@@ -1961,15 +1909,15 @@ body.modal-open .feature-close {
     display: flex;
     flex-direction: column;
     gap: 4px;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .contact-info-label {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .contact-info-value {
-    font-size: 14px;
+    font-size: 18px;
     word-break: break-all;
   }
 
@@ -1977,7 +1925,7 @@ body.modal-open .feature-close {
     width: 72px;
     height: 72px;
     margin-top: 18px;
-    align-self: flex-start;
+    align-self: center;
   }
 }
 
