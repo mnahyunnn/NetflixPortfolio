@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <title>Hilary Netflix Style Portfolio</title>
+
+  <!-- Remix Icon -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+
+  <!-- Pretendard -->
+  <link
+    rel="stylesheet"
+    as="style"
+    crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+  />
+
+  <!-- Montserrat -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap"
+    rel="stylesheet"
+  />
+
+    <!-- CSS link -->
+    <link rel="stylesheet" href="CSS/details.css">
+
+    <!-- emailJS cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
+      background: #f7f7f4;
+      color: #111;
+      line-height: 1.7;
+    }
+
+    .about-section {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 100px 24px;
+    }
+
+    .about-label {
+      font-size: 0.9rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 24px;
+      display: inline-block;
+    }
+
+    .about-hero {
+      margin-bottom: 80px;
+      color: #fff;
+    }
+
+    .about-hero h1 {
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      line-height: 1.05;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      max-width: 900px;
+      margin-bottom: 28px;
+      
+    }
+
+    .about-hero p {
+      font-size: 1.2rem;
+      max-width: 760px;
+      color: #fff;
+    }
+.about-container {
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.about-hero {
+  display: flex;}
+
+.about-left {
+  flex: 1;
+}
+
+.about-image {
+  flex: 1;
+  height: 500px; /* 중요: 높이 없으면 무너짐 */
+}
+
+.about-image {
+  flex: 42% 0 0;
+  min-height: 720px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.about-image img {
+  width: 90%;
+  max-width: 520px;
+}
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 72px;
+    }
+
+    .about-card {
+      background: #fff;
+      border-radius: 28px;
+      padding: 36px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .about-card h2 {
+      font-size: 17px;
+      margin-bottom: 18px;
+      color: #666;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .about-card p {
+      font-size: 1.05rem;
+      color: #222;
+      margin-bottom: 18px;
+    }
+
+    .about-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight {
+      font-weight: 800;
+    }
+
+    .red{
+      color: #E50914;
+    }
+
+    .large{
+      font-size: 27px;
+    }
+
+ 
+    .quote {
+      font-size: 1.5rem;
+      line-height: 1.4;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .fun-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .fun-list li {
+      font-size: 1rem;
+      color: #222;
+      padding-left: 1.8rem;
+      position: relative;
+    }
+
+    .fun-list li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: bold;
+    }
+
+    .big-statement {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+      margin-bottom: 24px;
+    }
+
+    .flow-line {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 18px 0;
+      color: #111;
+    }
+
+    .cta-box {
+      background: #2b2b2b;
+      color: #fff;
+      border-radius: 28px;
+      padding: 42px 36px;
+    }
+
+    .cta-box h3 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: -0.03em;
+    }
+
+    .cta-box p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 700px;
+    }
+
+
+    @media (max-width: 840px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-card,
+      .cta-box {
+        padding: 28px;
+        border-radius: 22px;
+      }
+
+      .about-section {
+        padding: 72px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="hero">
+      <header class="header">
+        <div class="header-left">
+          <a href="homepage.html" aria-label="Hilary Home">
+            <img
+              src="images/netflix.png"
+              alt="Hilary logo"
+              class="header-logo"
+            />
+          </a>
+
+
+        <nav class="nav" aria-label="Main navigation">
+            <a href="homepage.html">Home</a>
+            <a href="#" style="color: #E50914;">About Hilary</a>
+            <a href="vid.html">Videography</a>
+            <a href="branding.html">Branding & Illustrator</a>
+            <a href="ui.html">UI Design</a>
+            <a href="ux.html">UX Design</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+
+
+      </header>
+      <section class="about-section">
+    <span class="about-label">About Hilary</span>
+
+    <div class="about-hero">
+      <div class="about-left">
+      <h1>당신의 경험을 <br> <span class="red">‘이야기’로 만드는 것.</span></h1>
+      <p>
+        사람들은 디자인을 본다고 생각합니다.<br>
+        그런데 사실은, 디자인에 끌려서 움직이고 있습니다.
+        <span class="highlight"> 저는 그 움직임을 설계하는 사람입니다.</span>
+      </p>
+      <h2>
+        저는 화면을 디자인하지 않습니다. <br>
+사람이 빠져드는 ‘이야기’를 설계합니다.
+      </h2>
+      <p>
+   언어가 다르고, 문화가 다르고, 살아온 배경이 달라도<br>
+      결국 사람의 마음을 움직이는 건 공감할 수 있는 이야기라고 믿습니다.<br><br>
+
+      저는 단순히 보기 좋은 화면을 만드는 데서 멈추지 않습니다.<br>
+      브랜드의 진심, 한 사람의 서사, 그리고 그 안에 담긴 감정을<br>
+      더 많은 사람이 이해하고 느낄 수 있도록 경험으로 풀어냅니다.
+      </p>
+    </div>
+    
+    <div class="about-image">
+  <img src="/images/ahyunlogo.PNG" alt="Hilary Logo">
+</div>
+</div>
+
+
+
+  <!-- GRID 1 -->
+  <div class="about-grid">
+    <div class="about-card">
+      <h2> 제가 만들고 싶은 것</h2>
+      <p class="quote">
+        <span class="red">“누구에게나 닿을 수 있는 이야기.”</span>
+      </p>
+      <p>
+        저는 콘텐츠가 단순한 정보 전달로 끝나지 않기를 바랍니다.
+        누군가가 스쳐 지나가는 화면이 아니라,
+        <span class="highlight">‘이건 내 이야기 같아’</span>라고 느낄 수 있는
+        경험이 되기를 바랍니다.
+      </p>
+      <p>
+        공감이 생기고, 감정이 남고, 기억되는
+        <span class="highlight">서사의 흐름</span>을 만듭니다.
+      </p>
+    </div>
+
+    <div class="about-card">
+      <h2>왜 글로벌이어야 하는가</h2>
+      <p>
+        저는 서로 다른 언어와 문화 속에서 배우고 살아오며,
+        한 가지를 분명히 느꼈습니다.
+      </p>
+      <p class="quote">
+        <span class="red">“사람은 다르게 말해도, 비슷한 방식으로 공감한다.”</span>
+      </p>
+      <p>
+        그렇기 때문에 저는 특정 언어권만을 위한 메시지가 아니라,
+        배경이 달라도 자연스럽게 이해되고 공감될 수 있는
+        <span class="highlight">보편적인 감정의 접점</span>을 찾고 싶습니다.
+      </p>
+    </div>
+  </div>
+
+  <!-- GRID 2 -->
+  <div class="about-grid">
+    <div class="about-card">
+      <h2>제가 하는 일</h2>
+      <p class="quote">
+        <span class="red">저는 UX/UI 디자이너이면서 동시에 스토리텔러입니다.</span>
+      </p>
+      <div class="flow-line">맥락 → 감정 → 공감 → 행동</div>
+      <p>
+        사람은 단지 예쁜 디자인 때문에 움직이지 않습니다.
+        자신과 연결된다고 느낄 때, 비로소 머무르고, 반응하고, 기억합니다.
+        저는 그 연결의 순간을 설계합니다. <br> <br>
+        <span class="highlight"> 브랜드가 말하고 싶은 이야기를,
+        더 많은 사람들이 자신의 감정으로 받아들일 수 있도록 만듭니다.</span>
+      </p>
+    </div>
+
+    <div class="about-card">
+      <h2>그래서 저는</h2>
+      <p>
+        누군가에게 브랜드의 이야기를 더 선명하게 들려주고 싶은 사람,
+        혹은 한 사람의 진심을 더 많은 이들의 마음에 닿게 하고 싶은 사람에게
+        필요한 존재가 되고 싶습니다.
+      </p>
+      <p class="quote"><span class="red">
+        보기 좋은 것을 넘어,
+        공감되고 기억되는 내용을 만들고 싶습니다.</span>
+      </p>
+      <p>
+        단순히 ‘디자인을 잘하는 사람’이 아니라,
+        <span class="highlight">당신의 이야기를 더 멀리, 더 깊이 닿게 만드는 사람입니다.</span>
+      </p>
+    </div>
+  </div>
+
+
+<div class="cta-box">
+    <h3>
+      “이야기를 더 많은 사람에게 닿아야 한다면,
+        제가 그 선택일 수도 있습니다.”
+    </h3>
+    <p>
+      저는 화면을 꾸미는 사람이 아니라,
+        브랜드와 사람의 이야기를 공감 가능한 경험으로 번역하는 사람입니다.
+    </p> <br><br>
+    <p><span class="red highlight large"> 
+언어와 배경이 달라도,
+      결국 사람의 마음에 남는 것은 이야기입니다.
+    </span>
+      
+    </p>
+
+    <p>
+      그리고 그 이야기가 더 많은 사람에게 닿아야 한다면,<br>
+      저는 그 이야기를 가장 공감되는 방식으로 풀어낼 선택이 되고 싶습니다.
+    </p>
+  </div>
+  
+</section>
