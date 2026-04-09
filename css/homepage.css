@@ -1451,5 +1451,574 @@ body.modal-open .feature-close {
   font-weight: 700;
 }
 
+/* =========================
+   MOBILE / PHONE
+   ========================= */
+@media screen and (max-width: 767px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .page,
+  .hero,
+  .portfolio-detail,
+  .skills-section,
+  .language-section,
+  .contact-section {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* header */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 12px 16px;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .header-logo {
+    width: 86px;
+    height: auto;
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    width: 100%;
+  }
+
+  .nav a {
+    font-size: 12px;
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+
+  .header-right {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+  }
+
+  .profile-trigger {
+    gap: 4px;
+  }
+
+  .current-profile-name {
+    display: none;
+  }
+
+  .profile-pic {
+    width: 30px;
+    height: 30px;
+  }
+
+  .dropdown-menu {
+    right: 0;
+    width: 220px;
+    max-width: calc(100vw - 32px);
+  }
+
+  /* hero */
+  .hero {
+    min-height: auto;
+    padding: 88px 16px 28px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+  }
+
+  .hero-netflix-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 14px;
+  }
+
+  .title-calligraphy {
+    width: min(88vw, 360px);
+    height: auto;
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  .hero-title {
+    font-size: 18px;
+    line-height: 1.45;
+    white-space: normal;
+    word-break: keep-all;
+    margin-bottom: 16px;
+  }
+
+  .hero-description-group {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+    line-height: 1.55;
+    white-space: normal;
+    word-break: keep-all;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .hero-btn {
+    width: auto;
+    min-width: 132px;
+    height: 46px;
+    padding: 0 16px;
+    font-size: 16px;
+  }
+
+  .hero-btn i {
+    font-size: 18px;
+  }
+
+  /* my list */
+  .my-list-section {
+    padding: 20px 16px 28px;
+  }
+
+  .my-list-title {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .my-list-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .my-list-row {
+    display: flex;
+    gap: 12px;
+    width: max-content;
+    padding-bottom: 4px;
+  }
+
+  .my-card {
+    width: 220px;
+    flex: 0 0 220px;
+  }
+
+  .my-card-image {
+    width: 220px;
+    height: 125px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .my-card::before {
+    font-size: 18px;
+    max-width: 80%;
+    text-align: center;
+  }
+
+  /* detail overlay */
+  .detail-frame {
+    top: 24px;
+    right: 12px;
+    bottom: 24px;
+    left: 12px;
+    border-radius: 14px;
+  }
+
+  .detail-close {
+    top: 10px;
+    right: 10px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .detail-close i {
+    font-size: 34px;
+  }
+
+  /* portfolio detail wrapper */
+  .portfolio-detail {
+    padding: 28px 16px 72px;
+  }
+
+  .feature-panel {
+    width: 100%;
+    min-height: 240px;
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .feature-copy {
+    position: static;
+  }
+
+  .feature-korean {
+    font-size: 46px;
+    line-height: 1.05;
+    margin: 0 0 8px;
+  }
+
+  .feature-eng {
+    font-size: 24px;
+    margin: 0 0 4px;
+  }
+
+  .feature-chn {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .feature-logo {
+    width: 64px;
+    height: 64px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .feature-close {
+    top: 12px;
+    right: 12px;
+  }
+
+  .feature-close i {
+    font-size: 30px;
+  }
+
+  /* section titles */
+  .education-title,
+  .experience-title,
+  .skills-title,
+  .language-title,
+  .contact-title {
+    font-size: 30px;
+    line-height: 1.1;
+  }
+
+  /* education */
+  .education-section,
+  .experience-section,
+  .skills-section,
+  .language-section,
+  .contact-section {
+    padding: 0;
+    margin-top: 36px;
+  }
+
+  .education-header,
+  .experience-header,
+  .skills-header,
+  .language-header {
+    margin-bottom: 14px;
+  }
+
+  .education-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .education-meta {
+    font-size: 14px;
+    line-height: 1.4;
+    white-space: normal;
+  }
+
+  .education-list,
+  .experience-list {
+    gap: 14px;
+  }
+
+  .education-card,
+  .experience-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    min-height: auto;
+    padding: 14px;
+    border-radius: 10px;
+  }
+
+  .education-degree,
+  .experience-type {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .education-school-image,
+  .experience-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .education-content,
+  .experience-content {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .education-school-name,
+  .experience-role {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
+  .education-major,
+  .education-projects,
+  .experience-company {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 6px;
+  }
+
+  .experience-bullets {
+    margin-top: 8px;
+    padding-left: 18px;
+  }
+
+  .experience-bullets li {
+    font-size: 13px;
+    line-height: 1.55;
+    margin-bottom: 6px;
+  }
+
+  .education-location,
+  .experience-location {
+    position: static;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+
+  /* skills */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .skill-card {
+    border-radius: 14px;
+  }
+
+  .skill-card-top {
+    height: 120px;
+    padding: 12px;
+  }
+
+  .skill-logo {
+    max-width: 100%;
+    max-height: 88px;
+    object-fit: contain;
+  }
+
+  .skill-card-bottom {
+    min-height: auto;
+    padding: 12px;
+  }
+
+  .skill-rating {
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .skill-rating i {
+    font-size: 14px;
+  }
+
+  .skill-name {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .skill-meta {
+    font-size: 12px;
+    line-height: 1.45;
+    margin-top: 6px;
+  }
+
+  /* language */
+  .language-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .language-card {
+    min-height: auto;
+    padding: 14px;
+    gap: 10px;
+    border-radius: 10px;
+  }
+
+  .language-name {
+    font-size: 20px;
+  }
+
+  .language-meta {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .language-flag {
+    width: 44px;
+    height: 44px;
+  }
+
+  .language-rating i {
+    font-size: 14px;
+  }
+
+  /* contact */
+  .contact-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .contact-subtitle {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 14px 0 20px;
+  }
+
+  .contact-box,
+  .contact-form {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contact-form-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .contact-form-row label {
+    font-size: 14px;
+  }
+
+  .contact-form-row input,
+  .contact-form-row textarea {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .contact-form-row input {
+    height: 46px;
+    padding: 0 12px;
+  }
+
+  .contact-form-row textarea {
+    min-height: 140px;
+    padding: 12px;
+  }
+
+  .contact-submit {
+    width: 100%;
+    height: 48px;
+    margin-left: 0;
+    font-size: 16px;
+  }
+
+  .contact-right {
+    min-height: auto;
+    padding-top: 0;
+  }
+
+  .contact-info-list {
+    gap: 16px;
+  }
+
+  .contact-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+  }
+
+  .contact-info-label {
+    font-size: 16px;
+  }
+
+  .contact-info-value {
+    font-size: 14px;
+    word-break: break-all;
+  }
+
+  .contact-logo {
+    width: 72px;
+    height: 72px;
+    margin-top: 18px;
+    align-self: flex-start;
+  }
+}
+
+/* =========================
+   SMALLER PHONE
+   ========================= */
+@media screen and (max-width: 480px) {
+  .hero {
+    padding-top: 84px;
+  }
+
+  .title-calligraphy {
+    width: min(92vw, 320px);
+  }
+
+  .hero-title {
+    font-size: 16px;
+  }
+
+  .hero-description {
+    font-size: 12px;
+  }
+
+  .my-card {
+    width: 180px;
+    flex-basis: 180px;
+  }
+
+  .my-card-image {
+    width: 180px;
+    height: 102px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .motivation-text,
+  .feature-korean {
+    word-break: keep-all;
+  }
+}
 
 
