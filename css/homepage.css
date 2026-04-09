@@ -1460,61 +1460,62 @@ body.modal-open .feature-close {
     overflow-x: hidden;
   }
 
-  .page,
-  .hero,
-  .portfolio-detail,
-  .skills-section,
-  .language-section,
-  .contact-section {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
   /* header */
   .header {
     position: sticky;
     top: 0;
     z-index: 1000;
     padding: 12px 16px;
-    align-items: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 12px;
   }
 
   .header-left {
+    min-width: 0;
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
-    width: 100%;
+    gap: 10px;
+    overflow: hidden;
   }
 
   .header-logo {
     width: 86px;
     height: auto;
+    flex-shrink: 0;
   }
 
+  /* nav: one row, horizontally scrollable */
   .nav {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px 14px;
+    flex-wrap: nowrap;
+    gap: 14px;
     width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+
+  .nav::-webkit-scrollbar {
+    display: none;
   }
 
   .nav a {
+    flex: 0 0 auto;
     font-size: 12px;
     line-height: 1.3;
     white-space: nowrap;
   }
 
   .header-right {
-    position: absolute;
-    top: 12px;
-    right: 16px;
-  }
-
-  .profile-trigger {
-    gap: 4px;
+    position: static;
+    flex-shrink: 0;
   }
 
   .current-profile-name {
@@ -1593,10 +1594,6 @@ body.modal-open .feature-close {
     font-size: 16px;
   }
 
-  .hero-btn i {
-    font-size: 18px;
-  }
-
   /* my list */
   .my-list-section {
     padding: 20px 16px 28px;
@@ -1620,20 +1617,22 @@ body.modal-open .feature-close {
     padding-bottom: 4px;
   }
 
+  /* keep ratio, just smaller */
   .my-card {
-    width: 220px;
-    flex: 0 0 220px;
+    width: 180px;
+    flex: 0 0 180px;
   }
 
   .my-card-image {
-    width: 220px;
-    height: 125px;
+    width: 180px;
+    height: auto;
+    aspect-ratio: 288 / 164;
     object-fit: cover;
     display: block;
   }
 
   .my-card::before {
-    font-size: 18px;
+    font-size: 16px;
     max-width: 80%;
     text-align: center;
   }
@@ -1658,20 +1657,30 @@ body.modal-open .feature-close {
     font-size: 34px;
   }
 
-  /* portfolio detail wrapper */
+  /* portfolio wrapper */
   .portfolio-detail {
     padding: 28px 16px 72px;
   }
 
+  /* feature: keep one composed panel, not split */
   .feature-panel {
+    position: relative;
     width: 100%;
     min-height: 240px;
-    padding: 18px;
     border-radius: 14px;
+    overflow: hidden;
+    padding: 0;
+    display: block;
+    background-size: cover;
+    background-position: center;
   }
 
   .feature-copy {
-    position: static;
+    position: absolute;
+    left: 16px;
+    bottom: 18px;
+    z-index: 2;
+    margin: 0;
   }
 
   .feature-korean {
@@ -1691,13 +1700,15 @@ body.modal-open .feature-close {
   }
 
   .feature-logo {
-    width: 64px;
-    height: 64px;
+    position: absolute;
     right: 16px;
     bottom: 16px;
+    width: 64px;
+    height: 64px;
   }
 
   .feature-close {
+    position: absolute;
     top: 12px;
     right: 12px;
   }
@@ -1716,7 +1727,7 @@ body.modal-open .feature-close {
     line-height: 1.1;
   }
 
-  /* education */
+  /* shared section spacing */
   .education-section,
   .experience-section,
   .skills-section,
@@ -1762,10 +1773,13 @@ body.modal-open .feature-close {
     border-radius: 10px;
   }
 
+  /* keep these words together */
   .education-degree,
   .experience-type {
     font-size: 20px;
     line-height: 1.2;
+    white-space: nowrap;
+    word-break: keep-all;
   }
 
   .education-school-image,
@@ -1815,51 +1829,51 @@ body.modal-open .feature-close {
     margin-top: 4px;
   }
 
-  /* skills */
+  /* skills: 3 in a row */
   .skills-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
   }
 
   .skill-card {
-    border-radius: 14px;
+    border-radius: 12px;
   }
 
   .skill-card-top {
-    height: 120px;
-    padding: 12px;
+    height: 96px;
+    padding: 10px;
   }
 
   .skill-logo {
     max-width: 100%;
-    max-height: 88px;
+    max-height: 70px;
     object-fit: contain;
   }
 
   .skill-card-bottom {
     min-height: auto;
-    padding: 12px;
+    padding: 10px;
   }
 
   .skill-rating {
-    gap: 6px;
-    margin-bottom: 10px;
+    gap: 4px;
+    margin-bottom: 8px;
   }
 
   .skill-rating i {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .skill-name {
-    font-size: 18px;
+    font-size: 15px;
     line-height: 1.2;
   }
 
   .skill-meta {
-    font-size: 12px;
-    line-height: 1.45;
-    margin-top: 6px;
+    font-size: 11px;
+    line-height: 1.4;
+    margin-top: 5px;
   }
 
   /* language */
@@ -1893,6 +1907,9 @@ body.modal-open .feature-close {
   .language-rating i {
     font-size: 14px;
   }
+
+
+
 
   /* contact */
   
@@ -1929,44 +1946,28 @@ body.modal-open .feature-close {
   }
 }
 
-/* =========================
-   SMALLER PHONE
-   ========================= */
+/* smaller phones */
 @media screen and (max-width: 480px) {
-  .hero {
-    padding-top: 84px;
-  }
-
-  .title-calligraphy {
-    width: min(92vw, 320px);
-  }
-
-  .hero-title {
-    font-size: 16px;
-  }
-
-  .hero-description {
-    font-size: 12px;
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .my-card {
-    width: 180px;
-    flex-basis: 180px;
+    width: 160px;
+    flex-basis: 160px;
   }
 
   .my-card-image {
-    width: 180px;
-    height: 102px;
+    width: 160px;
   }
 
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .motivation-text,
   .feature-korean {
-    word-break: keep-all;
+    font-size: 38px;
+  }
+
+  .feature-eng,
+  .feature-chn {
+    font-size: 20px;
   }
 }
-
 
